@@ -5,5 +5,6 @@ set(CXX_STANDARD_REQUIRED ON)
 
 project(IMPMATHOBJ)
 add_subdirectory(Vector)
+add_subdirectory(Matrix)
 add_subdirectory(BinaryTree)
 
