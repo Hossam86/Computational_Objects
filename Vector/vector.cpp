@@ -28,3 +28,27 @@ vector<T, N>::vector(const vector &v)
         components[i] = v.components[i];
     }
 }
+
+//Assignment Operators
+template <class T, int N>
+const vector<T, N> &vector<T, N>::operator=(const vector<T, N> &v)
+{
+    if (this != &v)
+    {
+        for (int i = 0; i < N; i++)
+        {
+            components[i] = v.components[i];
+        }
+    }
+    return *this;
+}
+
+template <class T, int N>
+const vector<T, N> &vector<T, N>::operator=(const T &t)
+{
+    for (int i = 0; i < N; i++)
+    {
+        components[i] = t;
+    }
+    return *this;
+}
