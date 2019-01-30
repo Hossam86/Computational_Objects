@@ -10,6 +10,7 @@ public:
   matrix();
   //implicit converter
   matrix(const vector<vector<T, M>, N> &) {}
-  
+  //read matrix element 
+  const T &operator()(int i, int j) const { return *this[i][j] }
 };
 #endif
