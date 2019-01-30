@@ -52,3 +52,13 @@ const vector<T, N> &vector<T, N>::operator=(const T &t)
     }
     return *this;
 }
+
+//adding vector to the current vector 
+template <class T, int N>
+const vector<T, N> &vector<T, N>::operator+=(const vector<T, N> &v)
+{
+    for (int i = 0; i < N; i++)
+    {
+        components[i] += v;
+    }
+}
