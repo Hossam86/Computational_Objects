@@ -53,7 +53,7 @@ const vector<T, N> &vector<T, N>::operator=(const T &t)
     return *this;
 }
 
-//adding vector to the current vector 
+//adding vector to the current vector
 template <class T, int N>
 const vector<T, N> &vector<T, N>::operator+=(const vector<T, N> &v)
 {
@@ -61,4 +61,16 @@ const vector<T, N> &vector<T, N>::operator+=(const vector<T, N> &v)
     {
         components[i] += v;
     }
+}
+//arthmetic operators
+template <class T, int N>
+const vector<T, N> operator+(const vector<T, N> &u, const vector<T, N> &v)
+{
+    return vector<T, N>(u) += v;
+}
+
+template <class T, int N>
+const vector<T, N> operator-(const vector<T, N> &v)
+{
+    return vector<T, N>(v) *= -1;
 }
