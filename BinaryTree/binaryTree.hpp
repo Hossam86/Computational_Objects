@@ -1,6 +1,6 @@
 #ifndef BINARYTREE_H
 #define BINARYTREE_H
-#include <vector>
+#include "../Vector/vector.hpp"
 template <class T>
 class binaryTree
 {
@@ -9,7 +9,7 @@ private:
   binaryTree *left;
   binaryTree *right;
 
-  typedef std::vector<int, 2> move;
+  typedef vector<int, 2> move;
 
 public:
   binaryTree(const T &t = 0) : head(t), left(0), right(0) {}                                                                              //default constructor
@@ -23,8 +23,18 @@ public:
     delete right;
     left = right = 0;
   }
-
-  binaryTree(int n, const move &m = move(1, 3));
+  //tower constructor
+  binaryTree(int n, const move &m = move(1, 3)) : head(m), left(0), right(0)
+  {
+    if (n > 1)
+    {
+      int empty = 1;
+      while ((empty == head[0]) || (empty == head[1]))
+        empty++;
+      left = new binaryTree(n - 1, move(head[0], empty));
+      right = new binaryTree(n - 1, move(empty, head[1]));
+    }
+  }
 };
 
 #endif
