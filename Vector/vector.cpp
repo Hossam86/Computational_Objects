@@ -1,4 +1,4 @@
-#include "vector.hpp"
+#ifdef VECTOR_H
 //default constructor
 template <class T, int N>
 vector<T, N>::vector(const T &a)
@@ -74,3 +74,4 @@ const vector<T, N> operator-(const vector<T, N> &v)
 {
     return vector<T, N>(v) *= -1;
 }
+#endif

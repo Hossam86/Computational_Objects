@@ -23,5 +23,5 @@ public:
   const vector &operator/=(const T &);
   ~vector() {}
 };
-// #include "vector.cpp" // Includes the template methods file
+#include "vector.cpp" // Includes the template methods file
 #endif
