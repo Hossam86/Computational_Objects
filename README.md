@@ -1,2 +1,2 @@
-# Implementation of Computational Objects
+# Useful Computational Objects
 C++ implementation for mathematical objects such as graphs, matrices, meshes, and polynomials.
