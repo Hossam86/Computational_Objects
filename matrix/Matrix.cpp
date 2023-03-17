@@ -1,20 +1,20 @@
-#include "matrix.hpp"
+#include "Matrix.hpp"
 
 template <class T, int M, int N>
-const matrix<T, M, N> &matrix<T, M, N>::operator+=(const matrix<T, M, N> &m)
+const Matrix<T, M, N> &Matrix<T, M, N>::operator+=(const Matrix<T, M, N> &m)
 {
     vector<vector<T, M>, N>::operator+=(m);
     return *this;
 }
 template <class T, int M, int N>
-const matrix<T, M, N> &matrix<T, M, N>::operator-=(const matrix<T, M, N> &m)
+const Matrix<T, M, N> &Matrix<T, M, N>::operator-=(const Matrix<T, M, N> &m)
 {
     vector<vector<T, M>, N>::operator-=(m);
     return *this;
 }
 
 template <class T, int M, int N>
-const matrix<T, M, N> &matrix<T, M, N>::operator*=(const T &t)
+const Matrix<T, M, N> &Matrix<T, M, N>::operator*=(const T &t)
 {
     for (int i = 0; i < N; ++i)
     {
@@ -23,7 +23,7 @@ const matrix<T, M, N> &matrix<T, M, N>::operator*=(const T &t)
     return *this;
 }
 template <class T, int M, int N>
-const matrix<T, M, N> &matrix<T, M, N>::operator/=(const T &t)
+const Matrix<T, M, N> &Matrix<T, M, N>::operator/=(const T &t)
 {
     for (int i = 0; i < N; i++)
     {
